@@ -10,7 +10,7 @@ app.get('/', (req, res) => {
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
             <title>Quote Frame</title>
             <meta property="og:title" content="Quote Frame">
-            <meta property="og:image" content="https://yourimagehost.com/quote.jpg">
+            <meta property="og:image" content="https://media.discordapp.net/attachments/863438662988857416/1250307148534255726/8tky08.png?ex=66eb0105&is=66e9af85&hm=fed147212cdde00a7b8d498a238457b923d11216e5a2e72599d7f5aff42c7a9e&=&format=webp&quality=lossless">
             <meta property="og:description" content="Farcaster Quote Frame">
             <meta name="farcaster:action-label" content="Next Quote">
             <meta name="farcaster:action-request" content="POST">
@@ -25,7 +25,7 @@ app.get('/', (req, res) => {
 
 app.post('/new-quote', (req, res) => {
     // Generate new quote image URL
-    const newQuoteImageUrl = "https://media.discordapp.net/attachments/863438662988857416/1250307148534255726/8tky08.png?ex=66eb0105&is=66e9af85&hm=fed147212cdde00a7b8d498a238457b923d11216e5a2e72599d7f5aff42c7a9e&=&format=webp&quality=lossless";
+    const newQuoteImageUrl = "https://www.infobae.com/new-resizer/CQipQIH8c4vTBSrLF_j4vH_VbIc=/1440x810/filters:format(webp):quality(85)/cloudfront-us-east-1.images.arcpublishing.com/infobae/75GQQEPX5BAEPKH4RMSTZDEQP4.jpg";
     res.send(`
         <meta property="og:image" content="${newQuoteImageUrl}">
     `);
