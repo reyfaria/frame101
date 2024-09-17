@@ -1,7 +1,7 @@
 {
-  "name": "node-meta-app",
+  "name": "farcaster-quote-frame",
   "version": "1.0.0",
-  "description": "Simple Node.js app for Vercel deployment",
+  "description": "A simple Farcaster frame for quotes",
   "main": "index.js",
   "scripts": {
     "start": "node index.js"
