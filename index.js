@@ -19,15 +19,12 @@ app.get('/', (req, res) => {
       <meta property="fc:frame:button:1" content="Button1 Action" />
       <meta property="fc:frame:button:1:action" content="Action1 URL" />
       <meta property="fc:frame:button:1:target" content="Target1 Description" />
-
       <meta property="fc:frame:button:2" content="Button2 Action" />
       <meta property="fc:frame:button:2:action" content="Action2 URL" />
       <meta property="fc:frame:button:2:target" content="Target2 Description" />
-
       <meta property="fc:frame:button:3" content="Button3 Action" />
       <meta property="fc:frame:button:3:action" content="Action3 URL" />
       <meta property="fc:frame:button:3:target" content="Target3 Description" />
-
       <meta property="fc:frame:button:4" content="Button4 Action" />
       <meta property="fc:frame:button:4:action" content="Action4 URL" />
       <meta property="fc:frame:button:4:target" content="Target4 Description" />
