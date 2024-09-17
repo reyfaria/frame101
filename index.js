@@ -12,7 +12,7 @@ app.get('/', (req, res) => {
             
             <!-- Farcaster Frame Meta Tags -->
             <meta property="fc:frame" content="Quote Frame">
-            <meta property="fc:frame:image" content="https://yourimagehost.com/quote.jpg">
+            <meta property="fc:frame:image" content="https://www.infobae.com/new-resizer/CQipQIH8c4vTBSrLF_j4vH_VbIc=/1440x810/filters:format(webp):quality(85)/cloudfront-us-east-1.images.arcpublishing.com/infobae/75GQQEPX5BAEPKH4RMSTZDEQP4.jpg">
             
             <!-- Button 1 Meta Tags -->
             <meta property="fc:frame:button:1" content="Next Quote">
@@ -25,7 +25,7 @@ app.get('/', (req, res) => {
             <meta property="fc:frame:button:2:target" content="/random-quote">
 
             <meta property="og:title" content="Quote Frame">
-            <meta property="og:image" content="https://yourimagehost.com/quote.jpg">
+            <meta property="og:image" content="https://www.infobae.com/new-resizer/CQipQIH8c4vTBSrLF_j4vH_VbIc=/1440x810/filters:format(webp):quality(85)/cloudfront-us-east-1.images.arcpublishing.com/infobae/75GQQEPX5BAEPKH4RMSTZDEQP4.jpg">
             <meta property="og:description" content="Farcaster Quote Frame">
         </head>
         <body>
