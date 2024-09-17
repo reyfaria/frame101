@@ -9,12 +9,24 @@ app.get('/', (req, res) => {
             <meta charset="UTF-8">
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
             <title>Quote Frame</title>
+            
+            <!-- Farcaster Frame Meta Tags -->
+            <meta property="fc:frame" content="Quote Frame">
+            <meta property="fc:frame:image" content="https://yourimagehost.com/quote.jpg">
+            
+            <!-- Button 1 Meta Tags -->
+            <meta property="fc:frame:button:1" content="Next Quote">
+            <meta property="fc:frame:button:1:action" content="POST">
+            <meta property="fc:frame:button:1:target" content="/new-quote">
+            
+            <!-- Button 2 Meta Tags (optional) -->
+            <meta property="fc:frame:button:2" content="Random Quote">
+            <meta property="fc:frame:button:2:action" content="POST">
+            <meta property="fc:frame:button:2:target" content="/random-quote">
+
             <meta property="og:title" content="Quote Frame">
-            <meta property="og:image" content="https://media.discordapp.net/attachments/863438662988857416/1250307148534255726/8tky08.png?ex=66eb0105&is=66e9af85&hm=fed147212cdde00a7b8d498a238457b923d11216e5a2e72599d7f5aff42c7a9e&=&format=webp&quality=lossless">
+            <meta property="og:image" content="https://yourimagehost.com/quote.jpg">
             <meta property="og:description" content="Farcaster Quote Frame">
-            <meta name="farcaster:action-label" content="Next Quote">
-            <meta name="farcaster:action-request" content="POST">
-            <meta name="farcaster:action-url" content="/new-quote">
         </head>
         <body>
             <h1>Welcome to the Quote Frame</h1>
@@ -24,10 +36,16 @@ app.get('/', (req, res) => {
 });
 
 app.post('/new-quote', (req, res) => {
-    // Generate new quote image URL
-    const newQuoteImageUrl = "https://www.infobae.com/new-resizer/CQipQIH8c4vTBSrLF_j4vH_VbIc=/1440x810/filters:format(webp):quality(85)/cloudfront-us-east-1.images.arcpublishing.com/infobae/75GQQEPX5BAEPKH4RMSTZDEQP4.jpg";
+    const newQuoteImageUrl = "https://yourimagehost.com/new-quote.jpg";
     res.send(`
         <meta property="og:image" content="${newQuoteImageUrl}">
+    `);
+});
+
+app.post('/random-quote', (req, res) => {
+    const randomQuoteImageUrl = "https://yourimagehost.com/random-quote.jpg";
+    res.send(`
+        <meta property="og:image" content="${randomQuoteImageUrl}">
     `);
 });
 
