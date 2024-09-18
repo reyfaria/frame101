@@ -11,9 +11,9 @@ app.get('/', (req, res) => {
       <title>Frame con Botones Dinámicos</title>
       <meta property="og:title" content="Frame Dinámico" />
       <meta property="og:description" content="Un frame con botones dinámicos para navegación mensual." />
-      <meta property="og:image" content="https://proxy.wrpd.net/?url=https://your-image-url.com" />
+      <meta property="og:image" content="https://www.refined-marques.com/wp-content/uploads/2020/11/Lamborghini-and-Ferrari-900x480-1.jpg" />
       <meta property="fc:frame" content="vNext" />
-      <meta property="fc:frame:image" content="https://proxy.wrpd.net/?url=https://your-image-url.com" />
+      <meta property="fc:frame:image" content="https://www.refined-marques.com/wp-content/uploads/2020/11/Lamborghini-and-Ferrari-900x480-1.jpg" />
       <meta property="fc:frame:post_url" content="https://frame101.vercel.app/" />
       <style>
         button {
