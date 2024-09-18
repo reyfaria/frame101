@@ -5,35 +5,32 @@ const port = 3000;
 app.get('/', (req, res) => {
   res.send(`
     <!DOCTYPE html>
-    <html lang="en">
+    <html>
     <head>
       <meta charset="UTF-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-      <meta property="og:image" content="https://upload.wikimedia.org/wikipedia/commons/6/6e/Golde33443.jpg" />
-
+      <title>My Node.js App with Custom Meta Tags</title>
+      <meta property="og:title" content="My Node.js App" />
+      <meta property="og:description" content="This is a simple Node.js app with Open Graph and custom meta tags." />
+      <meta property="og:image" content="https://fc-dev-call.replit.app/image" />
+      <meta property="og:url" content="https://example.com" />
+      <!-- Custom Meta Tags -->
       <meta property="fc:frame" content="vNext" />
-      <meta property="fc:frame:image" content="https://upload.wikimedia.org/wikipedia/commons/6/6e/Golde33443.jpg" />
-
-      <meta property="fc:frame:button:1" content="Threads" />
+      <meta property="fc:frame:image" content="https://fc-dev-call.replit.app/image" />
+      <meta property="fc:frame:button:1" content="Spec" />
       <meta property="fc:frame:button:1:action" content="link" />
-      <meta property="fc:frame:button:1:target" content="https://www.threads.net/@ander.focus.ia/post/C-8WpD0IZDm?hl=es-la" />
-
+      <meta property="fc:frame:button:1:target" content="https://www.farcaster.xyz/reflect/frame101?content=constructing-a-frame" />
       <meta property="fc:frame:button:2" content="Image" />
       <meta property="fc:frame:button:2:action" content="link" />
-      <meta property="fc:frame:button:2:target" content="https://wrpcd.net/cdn-cgi/imagedelivery/BXluQx4ige9GuW0Ia56BHw/f8f79048-5e5c-4bff-41df-09b45c25da00/original" />
-
+      <meta property="fc:frame:button:2:target" content="https://fc-dev-call.replit.app/image" />
       <meta property="fc:frame:button:3" content="Frame Validator" />
       <meta property="fc:frame:button:3:action" content="link" />
       <meta property="fc:frame:button:3:target" content="https://warpcast.com/~/developers/frames" />
-
-      <meta property="fc:frame:button:4" content="Vercel" />
-      <meta property="fc:frame:button:4:action" content="Link" />
-      <meta property="fc:frame:button:4:target" content="https://vercel.com/rays-projects-e2d8a46b/frame101" />
-      <!-- Add more meta tags as needed -->
+      <meta property="fc:frame:button:4" content="Replit" />
+      <meta property="fc:frame:button:4:action" content="link" />
+      <meta property="fc:frame:button:4:target" content="https://replit.com/@VarunSrinivas4/FrailStridentDisc#index.js" />
     </head>
     <body>
-      <h1>Welcome to My Node.js App!</h1>
+      <h1>Welcome to My Node.js App with Custom Meta Tags!</h1>
     </body>
     </html>
   `);
