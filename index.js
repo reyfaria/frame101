@@ -12,7 +12,7 @@ app.get('/', (req, res) => {
       <meta property="og:title" content="Frame Dinámico" />
       <meta property="og:description" content="Un frame con botones dinámicos para navegación mensual." />
       <meta property="og:image" content="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQsrzL3oz4tuE0H525SnCXN6Xf57dyIfsUWbA&usqp=CAU" />
-      <meta property="fc:frame" content="Custom Dynamic Frame" />
+      <meta property="fc:frame" content="vNext" />
       <meta property="fc:frame:image" content="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQsrzL3oz4tuE0H525SnCXN6Xf57dyIfsUWbA&usqp=CAU" />
 
       <style>
