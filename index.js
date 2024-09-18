@@ -8,9 +8,9 @@ app.get('/', (req, res) => {
     <html>
     <head>
       <meta charset="UTF-8">
-      <title>Test de Botones Dinámicos</title>
+      <title>Frame con Botones</title>
       <meta property="og:title" content="Frame Dinámico con Botones" />
-      <meta property="og:description" content="Un frame con botones dinámicos para navegación mensual y cambio de imágenes." />
+      <meta property="og:description" content="Un frame con botones dinámicos para navegación mensual." />
       <meta property="og:image" content="https://www.refined-marques.com/wp-content/uploads/2020/11/Lamborghini-and-Ferrari-900x480-1.jpg" />
       <meta property="fc:frame" content="vNext" />
       <meta property="fc:frame:image" content="https://www.refined-marques.com/wp-content/uploads/2020/11/Lamborghini-and-Ferrari-900x480-1.jpg" />
@@ -24,22 +24,14 @@ app.get('/', (req, res) => {
       </style>
     </head>
     <body>
-      <h1>Test de Botones Dinámicos</h1>
-      <div id="buttonContainer"></div>
-      <p id="log"></p>
-      <script>
-        document.addEventListener('DOMContentLoaded', function() {
-          const container = document.getElementById('buttonContainer');
-          container.innerHTML = '<button onclick="showMessage(\'Botón Funciona!\')">Click Me!</button>';
-          document.getElementById('log').innerHTML = 'JavaScript se está cargando correctamente.';
-        });
-
-        function showMessage(message) {
-          const log = document.getElementById('log');
-          log.innerHTML += '<br>' + message;
-          alert(message);
-        }
-      </script>
+      <h1>Frame con Botones</h1>
+      <div id="buttonContainer">
+        <!-- Botones iniciales -->
+        <button onclick="alert('Enero')">Enero</button>
+        <button onclick="alert('Febrero')">Febrero</button>
+        <button onclick="alert('Marzo')">Marzo</button>
+        <button onclick="alert('Siguiente')">Siguiente</button>
+      </div>
     </body>
     </html>
   `);
