@@ -10,11 +10,11 @@ app.get('/', (req, res) => {
       <meta charset="UTF-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-      <meta property="og:image" content="https://proxy.wrpcd.net/?url=https%3A%2F%2Fmedia.decentralized-content.com%2F-%2Frs%3Afit%3A640%3A640%2Ff%3Apng%2FaHR0cHM6Ly96b3JhLmNvL2FwaS90aHVtYm5haWwvZmMvNzc3Nzc3Ny8weDVhYmYwYzA0YWI3MTk2ZTJiZGQxOTMxM2I0NzliYWViZDlmNzc5MWIvMjQy&s=d3397888cc1112adb0a2a4ac2e3c640ce13b6fdc6aa2628d46ccd9a63ebb39c9" />
+      <meta property="og:image" content="http://proxy.wrpcd.net/?url=https%3A%2F%2Fmedia.decentralized-content.com%2F-%2Frs%3Afit%3A640%3A640%2Ff%3Apng%2FaHR0cHM6Ly96b3JhLmNvL2FwaS90aHVtYm5haWwvZmMvNzc3Nzc3Ny8weDVhYmYwYzA0YWI3MTk2ZTJiZGQxOTMxM2I0NzliYWViZDlmNzc5MWIvMjQy&s=d3397888cc1112adb0a2a4ac2e3c640ce13b6fdc6aa2628d46ccd9a63ebb39c9" />
       
       
       <meta property="fc:frame" content="vNext" />
-      <meta property="fc:frame:image" content="https://proxy.wrpcd.net/?url=https%3A%2F%2Fmedia.decentralized-content.com%2F-%2Frs%3Afit%3A640%3A640%2Ff%3Apng%2FaHR0cHM6Ly96b3JhLmNvL2FwaS90aHVtYm5haWwvZmMvNzc3Nzc3Ny8weDVhYmYwYzA0YWI3MTk2ZTJiZGQxOTMxM2I0NzliYWViZDlmNzc5MWIvMjQy&s=d3397888cc1112adb0a2a4ac2e3c640ce13b6fdc6aa2628d46ccd9a63ebb39c9" />
+      <meta property="fc:frame:image" content="http://proxy.wrpcd.net/?url=https%3A%2F%2Fmedia.decentralized-content.com%2F-%2Frs%3Afit%3A640%3A640%2Ff%3Apng%2FaHR0cHM6Ly96b3JhLmNvL2FwaS90aHVtYm5haWwvZmMvNzc3Nzc3Ny8weDVhYmYwYzA0YWI3MTk2ZTJiZGQxOTMxM2I0NzliYWViZDlmNzc5MWIvMjQy&s=d3397888cc1112adb0a2a4ac2e3c640ce13b6fdc6aa2628d46ccd9a63ebb39c9" />
 
       <meta property="fc:frame:button:1" content="Threads" />
       <meta property="fc:frame:button:1:action" content="link" />
