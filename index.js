@@ -55,7 +55,7 @@ app.get('/', (req, res) => {
 
         // Cambia los botones al hacer clic en el cuarto botón
         document.addEventListener('click', function(event) {
-          if (event.target.tagName === 'BUTTON' && event.target.textContent === 'Cambiar Botones') {
+          if (event.target.textContent === 'Cambiar Botones') {
             const newButtons = [
               { label: "Nuevo Botón 1", action: "newAction1" },
               { label: "Nuevo Botón 2", action: "newAction2" },
@@ -66,7 +66,6 @@ app.get('/', (req, res) => {
           }
         });
       </script>
-      <button>Cambiar Botones</button>
     </body>
     </html>`
   );
