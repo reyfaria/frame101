@@ -3,63 +3,41 @@ const app = express();
 const port = 3000;
 
 app.get('/', (req, res) => {
-  res.send(`
+  res.send(
     <!DOCTYPE html>
     <html>
     <head>
       <meta charset="UTF-8">
-      <title>Dynamic Button Frame</title>
-      <style>
-        button {
-          margin: 5px;
-          padding: 10px;
-        }
-      </style>
+      <title>My Node.js App with Custom Meta Tags</title>
+      
+      <meta property="og:image" content="https://cdn.ferrari.com/cms/network/media/img/resize/6319eb192f9a532677cbe3c4-ferrari-purosangue-social-card-intro-share?width=1080" />
+
+      <meta property="fc:frame" content="vNext" />
+      <meta property="fc:frame:image" content="https://cdn.ferrari.com/cms/network/media/img/resize/6319eb192f9a532677cbe3c4-ferrari-purosangue-social-card-intro-share?width=1080" />
+      <meta property="fc:frame:button:1" content="Spec" />
+      <meta property="fc:frame:button:1:action" content="link" />
+      <meta property="fc:frame:button:1:target" content="https://www.farcaster.xyz/reflect/frame101?content=constructing-a-frame" />
+      
+      <meta property="fc:frame:button:2" content="Image" />
+      <meta property="fc:frame:button:2:action" content="link" />
+      <meta property="fc:frame:button:2:target" content="https://fc-dev-call.replit.app/image" />
+      
+      <meta property="fc:frame:button:3" content="Frame Validator" />
+      <meta property="fc:frame:button:3:action" content="link" />
+      <meta property="fc:frame:button:3:target" content="https://warpcast.com/~/developers/frames" />
+      
+      <meta property="fc:frame:button:4" content="Replit" />
+      <meta property="fc:frame:button:4:action" content="link" />
+      <meta property="fc:frame:button:4:target" content="https://replit.com/@VarunSrinivas4/FrailStridentDisc#index.js" />
+      
     </head>
     <body>
-      <h1>Frame con Botones Dinámicos</h1>
-      <div id="buttonContainer">
-        <button onclick="updateButtons(1)">Enero</button>
-        <button onclick="updateButtons(2)">Febrero</button>
-        <button onclick="updateButtons(3)">Marzo</button>
-        <button onclick="updateButtons('next')">Siguiente</button>
-      </div>
-      <script>
-        let currentStage = 0;
-        const months = [
-          ['Enero', 'Febrero', 'Marzo'],
-          ['Abril', 'Mayo', 'Junio'],
-          ['Julio', 'Agosto', 'Septiembre'],
-          ['Octubre', 'Noviembre', 'Diciembre']
-        ];
-
-        function updateButtons(action) {
-          const container = document.getElementById('buttonContainer');
-          if (action === 'next') {
-            currentStage++;
-          } else if (action === 'back') {
-            currentStage--;
-          }
-
-          container.innerHTML = '';
-          if (currentStage > 0) {
-            container.innerHTML += '<button onclick="updateButtons(\'back\')">Regresar</button>';
-          }
-
-          months[currentStage % months.length].forEach((month, index) => {
-            container.innerHTML += '<button onclick="updateButtons(' + (currentStage * 3 + index + 1) + ')">' + month + '</button>';
-          });
-
-          if (currentStage < months.length - 1) {
-            container.innerHTML += '<button onclick="updateButtons(\'next\')">Siguiente</button>';
-          }
-        }
-      </script>
+      <h1>Welcome to My Node.js App with Custom Meta Tags!</h1>
     </body>
     </html>
-  `);
+  );
 });
 
 app.listen(port, () => {
-  console.log(`Server running at http://localhost:${port}`);
+  console.log(Server running at http://localhost:${port});
 });
