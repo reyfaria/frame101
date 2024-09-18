@@ -2,6 +2,7 @@ const express = require('express');
 const app = express();
 const port = 3000;
 
+// Inicializa los botones
 let currentButtons = [
   { label: "Opción 1", action: "action1" },
   { label: "Opción 2", action: "action2" },
@@ -11,6 +12,7 @@ let currentButtons = [
 
 app.use(express.json());
 
+// Ruta principal
 app.get('/', (req, res) => {
   res.send(`
     <!DOCTYPE html>
@@ -18,8 +20,16 @@ app.get('/', (req, res) => {
     <head>
       <meta charset="UTF-8">
       <title>Dynamic Frame Example</title>
+      
+      <!-- Open Graph Tags -->
+      <meta property="og:image" content="https://cdn.ferrari.com/cms/network/media/img/resize/6319eb192f9a532677cbe3c4-ferrari-purosangue-social-card-intro-share?width=1080" />
+      <meta property="og:title" content="Dynamic Frame Example" />
+      <meta property="og:description" content="Este es un ejemplo de un frame dinámico en Farcaster." />
+
+      <!-- Farcaster Tags -->
       <meta property="fc:frame" content="vNext" />
       <meta property="fc:frame:image" content="https://cdn.ferrari.com/cms/network/media/img/resize/6319eb192f9a532677cbe3c4-ferrari-purosangue-social-card-intro-share?width=1080" />
+      
       ${currentButtons.map((button, index) => `
         <meta property="fc:frame:button:${index + 1}" content="${button.label}" />
         <meta property="fc:frame:button:${index + 1}:action" content="link" />
@@ -40,11 +50,11 @@ app.get('/', (req, res) => {
           .then(response => response.json())
           .then(data => {
             console.log('Buttons updated:', data);
-            location.reload(); // Reload to see changes
+            location.reload(); // Recarga para ver los cambios
           });
         }
 
-        // Example of changing buttons on click
+        // Ejemplo de cambio de botones al hacer clic
         document.addEventListener('click', function(event) {
           if (event.target.tagName === 'BUTTON') {
             const newButtons = [
@@ -61,11 +71,13 @@ app.get('/', (req, res) => {
   );
 });
 
+// Ruta para actualizar los botones
 app.post('/update-buttons', (req, res) => {
   currentButtons = req.body;
   res.json({ message: 'Buttons updated successfully!' });
 });
 
+// Inicia el servidor
 app.listen(port, () => {
   console.log(`Server running at http://localhost:${port}`);
 });
