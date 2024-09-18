@@ -37,6 +37,35 @@ app.get('/', (req, res) => {
     </head>
     <body>
       <h1>Dynamic Frame Example</h1>
+      <script>
+        function updateButtons(newButtons) {
+          fetch('/update-buttons', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(newButtons)
+          })
+          .then(response => response.json())
+          .then(data => {
+            console.log('Buttons updated:', data);
+            location.reload(); // Recarga para ver los cambios
+          });
+        }
+
+        // Cambia los botones al hacer clic en el cuarto botón
+        document.addEventListener('click', function(event) {
+          if (event.target.textContent === 'Cambiar Botones') {
+            const newButtons = [
+              { label: "Nuevo Botón 1", action: "newAction1" },
+              { label: "Nuevo Botón 2", action: "newAction2" },
+              { label: "Nuevo Botón 3", action: "newAction3" },
+              { label: "Botones Cambiados", action: "changedButtons" }
+            ];
+            updateButtons(newButtons);
+          }
+        });
+      </script>
     </body>
     </html>`
   );
