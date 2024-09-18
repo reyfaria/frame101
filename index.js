@@ -11,10 +11,10 @@ app.get('/', (req, res) => {
       <title>Frame con Botones Dinámicos</title>
       <meta property="og:title" content="Frame Dinámico" />
       <meta property="og:description" content="Un frame con botones dinámicos para navegación mensual." />
-      <meta property="og:image" content="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQsrzL3oz4tuE0H525SnCXN6Xf57dyIfsUWbA&usqp=CAU" />
+      <meta property="og:image" content="https://proxy.wrpd.net/?url=https://your-image-url.com" />
       <meta property="fc:frame" content="vNext" />
-      <meta property="fc:frame:image" content="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQsrzL3oz4tuE0H525SnCXN6Xf57dyIfsUWbA&usqp=CAU" />
-
+      <meta property="fc:frame:image" content="https://proxy.wrpd.net/?url=https://your-image-url.com" />
+      <meta property="fc:frame:post_url" content="https://frame101.vercel.app/" />
       <style>
         button {
           margin: 5px;
@@ -25,10 +25,7 @@ app.get('/', (req, res) => {
     <body>
       <h1>Frame con Botones Dinámicos</h1>
       <div id="buttonContainer">
-        <button onclick="updateButtons(1)">Enero</button>
-        <button onclick="updateButtons(2)">Febrero</button>
-        <button onclick="updateButtons(3)">Marzo</button>
-        <button onclick="updateButtons('next')">Siguiente</button>
+        <!-- Los botones se generan dinámicamente aquí -->
       </div>
       <script>
         let currentStage = 0;
@@ -45,6 +42,9 @@ app.get('/', (req, res) => {
             currentStage++;
           } else if (action === 'back') {
             currentStage--;
+          } else if (action === 'init') {
+            // Configuración inicial al cargar la página
+            currentStage = 0;
           }
 
           container.innerHTML = '';
@@ -60,6 +60,11 @@ app.get('/', (req, res) => {
             container.innerHTML += '<button onclick="updateButtons(\'next\')">Siguiente</button>';
           }
         }
+
+        // Llamada inicial para configurar los botones al cargar la página
+        document.addEventListener('DOMContentLoaded', function() {
+          updateButtons('init');
+        });
       </script>
     </body>
     </html>
