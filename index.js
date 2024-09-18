@@ -10,11 +10,10 @@ app.get('/', (req, res) => {
       <meta charset="UTF-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-      <meta property="og:image" content="https://ibb.co/V23Chrm" />
-      
-      
+      <meta property="og:image" content="https://upload.wikimedia.org/wikipedia/commons/6/6e/Golde33443.jpg" />
+
       <meta property="fc:frame" content="vNext" />
-      <meta property="fc:frame:image" content="https://ibb.co/V23Chrm" />
+      <meta property="fc:frame:image" content="https://upload.wikimedia.org/wikipedia/commons/6/6e/Golde33443.jpg" />
 
       <meta property="fc:frame:button:1" content="Threads" />
       <meta property="fc:frame:button:1:action" content="link" />
