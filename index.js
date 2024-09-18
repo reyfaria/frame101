@@ -1,6 +1,6 @@
 const express = require('express');
 const app = express();
-const port = 3000;
+const port = process.env.PORT || 3000;
 
 // Inicializa los botones
 let currentButtons = [
@@ -62,4 +62,22 @@ app.get('/', (req, res) => {
               { label: "Nuevo Botón 3", action: "newAction3" },
               { label: "Botones Cambiados", action: "changedButtons" }
             ];
-            updateButtons(newButtons
+            updateButtons(newButtons);
+          }
+        });
+      </script>
+    </body>
+    </html>`
+  );
+});
+
+// Ruta para actualizar los botones
+app.post('/update-buttons', (req, res) => {
+  currentButtons = req.body;
+  res.json({ message: 'Buttons updated successfully!' });
+});
+
+// Inicia el servidor
+app.listen(port, () => {
+  console.log(`Server running at http://localhost:${port}`);
+});
