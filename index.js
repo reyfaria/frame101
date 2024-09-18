@@ -10,10 +10,10 @@ app.get('/', (req, res) => {
       <meta charset="UTF-8">
       <title>My Node.js App with Custom Meta Tags</title>
       
-      <meta property="og:image" content="https://ibb.co/V23Chrm" />
+      <meta property="og:image" content="https://cdn.ferrari.com/cms/network/media/img/resize/6319eb192f9a532677cbe3c4-ferrari-purosangue-social-card-intro-share?width=1080" />
 
       <meta property="fc:frame" content="vNext" />
-      <meta property="fc:frame:image" content="https://ibb.co/V23Chrm" />
+      <meta property="fc:frame:image" content="https://cdn.ferrari.com/cms/network/media/img/resize/6319eb192f9a532677cbe3c4-ferrari-purosangue-social-card-intro-share?width=1080" />
       <meta property="fc:frame:button:1" content="Spec" />
       <meta property="fc:frame:button:1:action" content="link" />
       <meta property="fc:frame:button:1:target" content="https://www.farcaster.xyz/reflect/frame101?content=constructing-a-frame" />
