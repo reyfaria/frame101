@@ -1,43 +1,80 @@
 const express = require('express');
 const app = express();
-const port = 3000;
 
+// Route for the initial frame
 app.get('/', (req, res) => {
-  res.send(
-    `<!DOCTYPE html>
-    <html>
-    <head>
-      <meta charset="UTF-8">
-      <title>My Node.js App with Custom Meta Tags</title>
-      
-      <meta property="og:image" content="https://cdn.ferrari.com/cms/network/media/img/resize/6319eb192f9a532677cbe3c4-ferrari-purosangue-social-card-intro-share?width=1080" />
+    res.send(`
+        <!DOCTYPE html>
+        <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>Quote Frame</title>
 
-      <meta property="fc:frame" content="vNext" />
-      <meta property="fc:frame:image" content="https://cdn.ferrari.com/cms/network/media/img/resize/6319eb192f9a532677cbe3c4-ferrari-purosangue-social-card-intro-share?width=1080" />
-      <meta property="fc:frame:button:1" content="Spec" />
-      <meta property="fc:frame:button:1:action" content="link" />
-      <meta property="fc:frame:button:1:target" content="https://www.farcaster.xyz/reflect/frame101?content=constructing-a-frame" />
-      
-      <meta property="fc:frame:button:2" content="Image" />
-      <meta property="fc:frame:button:2:action" content="link" />
-      <meta property="fc:frame:button:2:target" content="https://fc-dev-call.replit.app/image" />
-      
-      <meta property="fc:frame:button:3" content="Frame Validator" />
-      <meta property="fc:frame:button:3:action" content="link" />
-      <meta property="fc:frame:button:3:target" content="https://warpcast.com/~/developers/frames" />
-      
-      <meta property="fc:frame:button:4" content="Replit" />
-      <meta property="fc:frame:button:4:action" content="link" />
-      <meta property="fc:frame:button:4:target" content="https://replit.com/@VarunSrinivas4/FrailStridentDisc#index.js" />
-      
-    </head>
-    <body>
-      <h1>Welcome to My Node.js App with Custom Meta Tags!</h1>
-    </body>
-    </html>`
-  );
+            <!-- Farcaster Frame Meta Tags -->
+            <meta property="fc:frame" content="Quote Frame">
+            <meta property="fc:frame:image" content="https://yourimagehost.com/quote.jpg">
+
+            <!-- Button 1 (Next Quote) -->
+            <meta property="fc:frame:button:1" content="Next Quote">
+            <meta property="fc:frame:button:1:action" content="POST">
+            <meta property="fc:frame:button:1:target" content="/new-quote">
+
+            <!-- Button 2 (Random Quote) -->
+            <meta property="fc:frame:button:2" content="Random Quote">
+            <meta property="fc:frame:button:2:action" content="POST">
+            <meta property="fc:frame:button:2:target" content="/random-quote">
+
+            <!-- Open Graph Meta Tags -->
+            <meta property="og:title" content="Quote Frame">
+            <meta property="og:image" content="https://yourimagehost.com/quote.jpg">
+            <meta property="og:description" content="A Farcaster Quote Frame with multiple actions.">
+        </head>
+        <body>
+            <h1>Welcome to the Quote Frame</h1>
+        </body>
+        </html>
+    `);
 });
 
-app.listen(port, () => {
-  console.log(`Server running at http://localhost:${port}`);
+// Endpoint to handle "Next Quote" button
+app.post('/new-quote', (req, res) => {
+    const newQuoteImageUrl = "https://yourimagehost.com/new-quote.jpg";
+    res.send(`
+        <!DOCTYPE html>
+        <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <meta property="og:image" content="${newQuoteImageUrl}">
+        </head>
+        <body>
+            <h1>Next Quote</h1>
+        </body>
+        </html>
+    `);
+});
+
+// Endpoint to handle "Random Quote" button
+app.post('/random-quote', (req, res) => {
+    const randomQuoteImageUrl = "https://yourimagehost.com/random-quote.jpg";
+    res.send(`
+        <!DOCTYPE html>
+        <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <meta property="og:image" content="${randomQuoteImageUrl}">
+        </head>
+        <body>
+            <h1>Random Quote</h1>
+        </body>
+        </html>
+    `);
+});
+
+// Start the server
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => {
+    console.log(`Server running on port ${PORT}`);
 });
