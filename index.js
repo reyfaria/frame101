@@ -1,80 +1,58 @@
 const express = require('express');
 const app = express();
+const port = process.env.PORT || 3000;
 
-// Route for the initial frame
+app.use(express.json());
+
+const frameHtml = (image, button1Text, button2Text) => `
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta property="fc:frame" content="vNext" />
+    <meta property="fc:frame:image" content="${image}" />
+    <meta property="fc:frame:button:1" content="${button1Text}" />
+    <meta property="fc:frame:button:2" content="${button2Text}" />
+    <meta property="fc:frame:post_url" content="https://your-vercel-url.vercel.app/api/frame" />
+    <title>Farcaster Frame</title>
+</head>
+<body>
+    <h1>Farcaster Frame Example</h1>
+</body>
+</html>
+`;
+
 app.get('/', (req, res) => {
-    res.send(`
-        <!DOCTYPE html>
-        <html lang="en">
-        <head>
-            <meta charset="UTF-8">
-            <meta name="viewport" content="width=device-width, initial-scale=1.0">
-            <title>Quote Frame</title>
-
-            <!-- Farcaster Frame Meta Tags -->
-            <meta property="fc:frame" content="Quote Frame">
-            <meta property="fc:frame:image" content="https://yourimagehost.com/quote.jpg">
-
-            <!-- Button 1 (Next Quote) -->
-            <meta property="fc:frame:button:1" content="Next Quote">
-            <meta property="fc:frame:button:1:action" content="POST">
-            <meta property="fc:frame:button:1:target" content="/new-quote">
-
-            <!-- Button 2 (Random Quote) -->
-            <meta property="fc:frame:button:2" content="Random Quote">
-            <meta property="fc:frame:button:2:action" content="POST">
-            <meta property="fc:frame:button:2:target" content="/random-quote">
-
-            <!-- Open Graph Meta Tags -->
-            <meta property="og:title" content="Quote Frame">
-            <meta property="og:image" content="https://yourimagehost.com/quote.jpg">
-            <meta property="og:description" content="A Farcaster Quote Frame with multiple actions.">
-        </head>
-        <body>
-            <h1>Welcome to the Quote Frame</h1>
-        </body>
-        </html>
-    `);
+    res.send(frameHtml(
+        'https://placekitten.com/800/600',
+        'Visit Claude AI',
+        'Go to YouTube'
+    ));
 });
 
-// Endpoint to handle "Next Quote" button
-app.post('/new-quote', (req, res) => {
-    const newQuoteImageUrl = "https://yourimagehost.com/new-quote.jpg";
-    res.send(`
-        <!DOCTYPE html>
-        <html lang="en">
-        <head>
-            <meta charset="UTF-8">
-            <meta name="viewport" content="width=device-width, initial-scale=1.0">
-            <meta property="og:image" content="${newQuoteImageUrl}">
-        </head>
-        <body>
-            <h1>Next Quote</h1>
-        </body>
-        </html>
-    `);
+app.post('/api/frame', (req, res) => {
+    const { buttonIndex } = req.body;
+    
+    if (buttonIndex === 1) {
+        res.send(frameHtml(
+            'https://placekitten.com/800/600',
+            'Redirecting...',
+            ''
+        ) + '<meta http-equiv="refresh" content="0;url=https://www.anthropic.com" />');
+    } else if (buttonIndex === 2) {
+        res.send(frameHtml(
+            'https://placekitten.com/800/600',
+            'Redirecting...',
+            ''
+        ) + '<meta http-equiv="refresh" content="0;url=https://www.youtube.com" />');
+    } else {
+        res.status(400).send('Invalid button index');
+    }
 });
 
-// Endpoint to handle "Random Quote" button
-app.post('/random-quote', (req, res) => {
-    const randomQuoteImageUrl = "https://yourimagehost.com/random-quote.jpg";
-    res.send(`
-        <!DOCTYPE html>
-        <html lang="en">
-        <head>
-            <meta charset="UTF-8">
-            <meta name="viewport" content="width=device-width, initial-scale=1.0">
-            <meta property="og:image" content="${randomQuoteImageUrl}">
-        </head>
-        <body>
-            <h1>Random Quote</h1>
-        </body>
-        </html>
-    `);
+app.listen(port, () => {
+    console.log(`Server running at http://localhost:${port}`);
 });
 
-// Start the server
-const PORT = process.env.PORT || 3000;
-app.listen(PORT, () => {
-    console.log(`Server running on port ${PORT}`);
-});
+module.exports = app;
