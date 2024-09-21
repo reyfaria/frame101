@@ -14,7 +14,7 @@ const frameHtml = (image, button1Text, button2Text) => `
     <meta property="fc:frame:image" content="${image}" />
     <meta property="fc:frame:button:1" content="${button1Text}" />
     <meta property="fc:frame:button:2" content="${button2Text}" />
-    <meta property="fc:frame:post_url" content="https://your-vercel-url.vercel.app/api/frame" />
+    <meta property="fc:frame:post_url" content="https://frame101.vercel.app/api/frame" />
     <title>Farcaster Frame</title>
 </head>
 <body>
